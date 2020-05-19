@@ -30,7 +30,7 @@
 <div class="parent">
   <div class="container">
     <div class="panel rt">
-      <form id="fm-register" method="post" action="login.html">
+      <form id="fm-register" method="post" action="login.jsp">
         <div class="txt">
           <p id="newuser">新用户注册
             <span>
@@ -146,6 +146,20 @@
     if(lengths==4){
     	$('.modal').fadeIn();
     	setTimeout(function(){
+    		//提交的同时还需要向数据库添加
+    		$.ajax({
+			  type:'post',
+			  data:'uname='+data,
+			  url:'${pagecontext.request.getcontextpath}/danei/unameCheck.action',
+				  success:function(data){
+				          console.log('开始处理响应数据');
+				          // alert("*"+data+"*");
+				          if(data=='yes'){
+				            alert('该用户名已被占用');
+				          }
+				  }
+			  });
+    		
     		$('#fm-register').submit();
     	},2000);
     }
@@ -175,7 +189,7 @@
       $.ajax({
 		  type:'post',
 		  data:'uname='+data,
-		  url:'unameCheck.action',
+		  url:'${pagecontext.request.getcontextpath}/danei/unameCheck.action',
 		  success:function(data){
 	          console.log('开始处理响应数据');
 	          // alert("*"+data+"*");
@@ -233,7 +247,7 @@
       $.ajax({
 		  type:'post',
 		  data:'email='+data,
-		  url:'emailCheck.action',
+		  url:'${pagecontext.request.getcontextpath}/danei/emailCheck.action',
 		  success:function(data){
 	          console.log('开始处理响应数据');
 	          // alert("*"+data+"*");
@@ -271,7 +285,7 @@
       $.ajax({
 		  type:'post',
 		  data:'phone='+data,
-		  url:'phoneCheck.action',
+		  url:'${pagecontext.request.getcontextpath}/danei/phoneCheck.action',
 		  success:function(data){
 	          console.log('开始处理响应数据');
 	          // alert("*"+data+"*");

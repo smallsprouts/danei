@@ -24,7 +24,7 @@
             <div class="txt">
                 <p>登录学子商城
                     <span>
-                        <a href="regist.html">新用户注册</a>
+                        <a href="regist.jsp">新用户注册</a>
                     </span>
                 </p>
                 <div class="text">
@@ -123,7 +123,7 @@
         }
         $.ajax({
             type:"POST",
-            url:"unameCheck.action",
+            url:"${pagecontext.request.getcontextpath}/danei/unameCheck.action",
             data:"uname="+data,
             beforeSend:function(XMLHttpRequest)
             {
@@ -148,22 +148,22 @@
         });
     });
     $('#bt-login').click(function(){
-        window.location.href =  "index.html";
+        //window.location.href =  "index.jsp";
         //读取用户的输入——表单序列化
         var inputData = $('#fm-login').serialize();
-        // alert(inputData);
+        //alert(inputData);
         //异步提交请求，进行验证
         $.ajax({
         	async: true,
             type: 'POST',
-            url: 'login.action',
+            url: '${pagecontext.request.getcontextpath}/danei/login.action',
             data: inputData,
             success: function(txt, msg, xhr){
             	// alert("*"+txt+"*");
                 if(txt=='yes'){  //登录成功
                     var loginName = $('[name="uname"]').val();
                     console.log(loginName);
-                    window.location.href =  "index.html";
+                    window.location.href =  "index.jsp";
                 }else{ //登录失败
                     $('#showResult').html('登录失败！');
                 }
