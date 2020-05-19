@@ -46,4 +46,9 @@ public class user {
 			return true;
 		return false;
 	}
+
+	public void adduser(String uname, String upwd, String email, String phone) throws SQLException {
+		cn.zzl.dao.user user = new cn.zzl.dao.user();
+		user.adduser(uname,upwd,email,phone);
+	}
 }

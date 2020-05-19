@@ -49,4 +49,14 @@
     <servlet-name>userPhoneCheck</servlet-name>
     <url-pattern>/phoneCheck.action</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>userRegister</display-name>
+    <servlet-name>userRegister</servlet-name>
+    <servlet-class>cn.zzl.servlet.userRegister</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userRegister</servlet-name>
+    <url-pattern>/userRegister.action</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -60,4 +60,14 @@ public class user {
 		}
 		return false;
 	}
+
+	public void adduser(String uname, String upwd, String email, String phone) throws SQLException {
+		QueryRunner qr=new QueryRunner(JDBCUtils.getDataSource());
+		String sql = "INSERT INTO tb_user (uname,upwd,email,phone)values(?,?,?,?)";
+		//创建object数组
+		Object[] params = {uname,upwd,email,phone};
+		//执行queryrunner的插入方法
+		int row = qr.update(sql, params);
+//		System.out.println(row);
+	}
 }
