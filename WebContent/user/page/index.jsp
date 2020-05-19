@@ -23,13 +23,13 @@
     </div>
     <div class="rt">
         <ul class="lf">
-            <li><a href="index.html" >首页</a><b>|</b></li>
-            <li><a href="collect.html" >收藏</a><b>|</b></li>
-            <li><a href="order.html" >订单</a><b>|</b></li>
-            <li><a href="cart.html" >购物车</a><b>|</b></li>
-            <li><a href="password-change.html">设置</a><b>|</b></li>
-            <li><a href="login.html">退出</a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a></li>
+            <li><a href="index.jsp" >首页</a><b>|</b></li>
+            <li><a href="collect.jsp" >收藏</a><b>|</b></li>
+            <li><a href="order.jsp" >订单</a><b>|</b></li>
+            <li><a href="cart.jsp" >购物车</a><b>|</b></li>
+            <li><a href="password-change.jsp">设置</a><b>|</b></li>
+            <li><a href="login.jsp">退出</a><b>|</b></li>
+            <li><a href="lookforward.jsp">帮助</a></li>
         </ul>
     </div>
 </header>
@@ -39,19 +39,19 @@
 <div class="ck-slide">
     <ul class="ck-slide-wrapper">
         <li>
-            <a href="detail.html"><img src="../img/banner/banner1.png" alt=""></a>
+            <a href="detail.jsp"><img src="../img/banner/banner1.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="detail.html"><img src="../img/banner/banner2.png" alt=""></a>
+            <a href="detail.jsp"><img src="../img/banner/banner2.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="detail.html"><img src="../img/banner/banner3.png" alt=""></a>
+            <a href="detail.jsp"><img src="../img/banner/banner3.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="detail.html"><img src="../img/banner/banner4.png" alt=""></a>
+            <a href="detail.jsp"><img src="../img/banner/banner4.png" alt=""></a>
         </li>
         <li style="display:none">
-            <a href="detail.html"><img src="../img/banner/banner5.png" alt=""></a>
+            <a href="detail.jsp"><img src="../img/banner/banner5.png" alt=""></a>
         </li>
     </ul>
     <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
@@ -80,7 +80,7 @@
 		    <div class="store_content">
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787111213826/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787111213826/index.jpg" alt=""/></a>
             <p class="one">Java编程思想</p>
             <p class="two">
                 <span>
@@ -97,7 +97,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787111526285/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787111526285/index.jpg" alt=""/></a>
             <p class="one">Go程序设计语言（英文版）</p>
             <p class="two">
                 <span>
@@ -114,7 +114,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787111532644/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787111532644/index.jpg" alt=""/></a>
             <p class="one">架构即未来</p>
             <p class="two">
                 <span>
@@ -131,7 +131,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787111545682/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787111545682/index.jpg" alt=""/></a>
             <p class="one">Linux运维最佳实践</p>
             <p class="two">
                 <span>
@@ -152,7 +152,7 @@
 		    <div class="store_content">
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787111563891/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787111563891/index.jpg" alt=""/></a>
             <p class="one">面向机器智能的TensorFlow实践</p>
             <p class="two">
                 <span>
@@ -169,7 +169,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787111564805/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787111564805/index.jpg" alt=""/></a>
             <p class="one">企业IT架构转型之道</p>
             <p class="two">
                 <span>
@@ -186,7 +186,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787115130228/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787115130228/index.jpg" alt=""/></a>
             <p class="one">C Primer Plus</p>
             <p class="two">
                 <span>
@@ -203,7 +203,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787115335500/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787115335500/index.jpg" alt=""/></a>
             <p class="one">深入浅出Node.js</p>
             <p class="two">
                 <span>
@@ -224,7 +224,7 @@
 		    <div class="store_content">
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787115353528/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787115353528/index.jpg" alt=""/></a>
             <p class="one">Python基础教程</p>
             <p class="two">
                 <span>
@@ -241,7 +241,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787115386397/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787115386397/index.jpg" alt=""/></a>
             <p class="one">Spring MVC学习指南</p>
             <p class="two">
                 <span>
@@ -258,7 +258,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787115388025/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787115388025/index.jpg" alt=""/></a>
             <p class="one">图解机器学习 </p>
             <p class="two">
                 <span>
@@ -275,7 +275,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787115435101/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787115435101/index.jpg" alt=""/></a>
             <p class="one">Python数据科学指南</p>
             <p class="two">
                 <span>
@@ -296,7 +296,7 @@
 		    <div class="store_content">
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787121281556/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787121281556/index.jpg" alt=""/></a>
             <p class="one">Hadoop 2.X HDFS源码剖析</p>
             <p class="two">
                 <span>
@@ -313,7 +313,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787121291609/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787121291609/index.jpg" alt=""/></a>
             <p class="one">Go语言学习笔记 </p>
             <p class="two">
                 <span>
@@ -330,7 +330,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787302383666/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787302383666/index.jpg" alt=""/></a>
             <p class="one">MongoDB大数据处理权威指南</p>
             <p class="two">
                 <span>
@@ -347,7 +347,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787302435167/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787302435167/index.jpg" alt=""/></a>
             <p class="one">大数据架构师指南</p>
             <p class="two">
                 <span>
@@ -368,7 +368,7 @@
 		    <div class="store_content">
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787302459873/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787302459873/index.jpg" alt=""/></a>
             <p class="one">数据挖掘与预测分析</p>
             <p class="two">
                 <span>
@@ -385,7 +385,7 @@
 
 
         <div>
-            <a href="detail.html"><img src="../img/goods/9787508344980/index.jpg" alt=""/></a>
+            <a href="detail.jsp"><img src="../img/goods/9787508344980/index.jpg" alt=""/></a>
             <p class="one">Head First Java（涵盖Java5.0）</p>
             <p class="two">
                 <span>
@@ -466,6 +466,7 @@
             <img src="../img/footer/erweima.png">
         </div>
     </div>
+    <%out.print(session.getAttribute("uname")) ; %>
 </div>
 <script src="../js/jquery-3.1.1.min.js"></script>
 <script src="../js/index.js"></script>

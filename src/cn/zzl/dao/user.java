@@ -70,4 +70,17 @@ public class user {
 		int row = qr.update(sql, params);
 //		System.out.println(row);
 	}
+
+	public String getuser_id(String uname) throws SQLException {
+		QueryRunner qr=new QueryRunner(JDBCUtils.getDataSource());
+		List<java.util.Map<String,Object>> query=qr.query("select * from tb_user", new MapListHandler());
+		for (Iterator iterator = query.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			if(map.get("uname").toString().equals(uname)) {
+				//返回用户手机号
+				return map.get("phone").toString();
+			};
+		}
+		return null;
+	}
 }

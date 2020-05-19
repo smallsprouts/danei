@@ -90,8 +90,9 @@
             <div id="box" >
 
 		        <div id="content_box" >
-
-                    <div class="lf" id="d1">
+<%out.print(session.getAttribute("collect_list"));%>
+                    
+                    <!-- <div class="lf" id="d1">
                         <div class="img">
                             <a href="detail.html">
                             	<img src="../img/goods/9787115435101/collect.jpg" alt=""/>
@@ -199,7 +200,7 @@
                                 <img src="../img/myCollect/product_normal_big.png" alt=""/>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 			    </div>
                 </div>
