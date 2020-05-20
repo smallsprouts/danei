@@ -48,10 +48,10 @@ public class UserLogin extends HttpServlet {
 					//建立会话
 					HttpSession session=request.getSession();
 					session.setAttribute("uname", uname);
-					//获取用户所有相关的信息
-					//1,用户的收藏
-					//2,将收藏信息存到session中去
+					//获取用户收藏
 					session.setAttribute("collect_list",new cn.zzl.service.collect().user_collect(uname));
+					//获取用户购物车信息
+					session.setAttribute("cart", new cn.zzl.service.cart_item().getCart_item(uname));
 				}
 				else
 					response.getWriter().append("no");
@@ -63,3 +63,4 @@ public class UserLogin extends HttpServlet {
 	}
 
 }
+

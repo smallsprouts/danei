@@ -1,3 +1,4 @@
+<%@page import="java.nio.channels.SeekableByteChannel"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 
@@ -23,13 +24,13 @@
     </div>
     <div class="rt">
         <ul class="lf">
-            <li><a href="index.html" >首页</a><b>|</b></li>
-            <li><a href="collect.html" >收藏</a><b>|</b></li>
-            <li><a href="order.html" >订单</a><b>|</b></li>
-            <li><a href="cart.html" >购物车</a><b>|</b></li>
-            <li><a href="password-change.html">设置</a><b>|</b></li>
-            <li><a href="login.html">退出</a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a></li>
+            <li><a href="index.jsp" >首页</a><b>|</b></li>
+            <li><a href="collect.jsp" >收藏</a><b>|</b></li>
+            <li><a href="order.jsp" >订单</a><b>|</b></li>
+            <li><a href="cart.jsp" >购物车</a><b>|</b></li>
+            <li><a href="password-change.jsp">设置</a><b>|</b></li>
+            <li><a href="login.jsp">退出</a><b>|</b></li>
+            <li><a href="lookforward.jsp">帮助</a></li>
         </ul>
     </div>
 </header>
@@ -85,8 +86,9 @@
                     <div class="totle_top">金额</div>
                     <div class="del_top">操作</div>
                 </div>
-
-                <div class="imfor">
+<!-- 每页显示五条记录 -->
+<%out.print(session.getAttribute("cart")); %>
+                <!-- <div class="imfor">
                     <div class="check">
                         <div class="Each">
                             <span class="normal">
@@ -120,73 +122,7 @@
                     </div>
                 </div>
 
-                <div class="imfor">
-                    <div class="check">
-                        <div class="Each">
-                            <span class="normal">
-                                <img src="../img/cart/product_normal.png" alt=""/>
-                            </span>
-                            <input type="hidden" name="" value="">
-                        </div>
-                    </div>
-                    <div class="pudc">
-                        <div class="pudc_information" id="2">
-                            <img src="../img/goods/9787111526285/detail1.jpg" class="lf"/>
-                            <input type="hidden" name="" value="">
-                        <span class="des lf">
-                         Go程序设计语言（英文版）
-                              <input type="hidden" name="" value="">
-                        </span>
-                            <p class="col lf"><span>作者：</span><span class="color_des">[美] 艾伦A.A.多诺万 等 著 <input type="hidden" name="" value=""></span></p>
-                        </div>
-                    </div>
-                    <div class="pices">
-                        <p class="pices_des"></p>
-                        <p class="pices_information"><b>￥</b><span>64.7<input type="hidden" name="" value=""></span></p>
-                    </div>
-                    <div class="num"><span class="reduc">&nbsp;-&nbsp;</span><input type="text" value="2" ><span class="add">&nbsp;+&nbsp;</span></div>
-                    <div class="totle">
-                        <span>￥</span>
-                        <span class="totle_information">64.7</span>
-                    </div>
-                    <div class="del">
-                        <a href="javascript:;" class="del_d">删除</a>
-                    </div>
-                </div>
-
-                <div class="imfor">
-                    <div class="check">
-                        <div class="Each">
-                            <span class="normal">
-                                <img src="../img/cart/product_normal.png" alt=""/>
-                            </span>
-                            <input type="hidden" name="" value="">
-                        </div>
-                    </div>
-                    <div class="pudc">
-                        <div class="pudc_information" id="3">
-                            <img src="../img/goods/9787111213826/detail1.jpg" class="lf"/>
-                            <input type="hidden" name="" value="">
-                        <span class="des lf">
-                         Java编程思想
-                              <input type="hidden" name="" value="">
-                        </span>
-                            <p class="col lf"><span>作者：</span><span class="color_des">[美] 埃克尔，译者：陈昊鹏 编 <input type="hidden" name="" value=""></span></p>
-                        </div>
-                    </div>
-                    <div class="pices">
-                        <p class="pices_des"></p>
-                        <p class="pices_information"><b>￥</b><span>86.4<input type="hidden" name="" value=""></span></p>
-                    </div>
-                    <div class="num"><span class="reduc">&nbsp;-&nbsp;</span><input type="text" value="2" ><span class="add">&nbsp;+&nbsp;</span></div>
-                    <div class="totle">
-                        <span>￥</span>
-                        <span class="totle_information">86.4</span>
-                    </div>
-                    <div class="del">
-                        <a href="javascript:;" class="del_d">删除</a>
-                    </div>
-                </div>
+                
 
                 <div class="imfor">
                     <div class="check">
@@ -264,7 +200,7 @@
                                 <img src="../img/cart/product_normal.png" alt=""/>
                             </span>  <input type="hidden" name="" value="">全选
                     </div>
-                </div>
+                </div> -->
                 <div class="foot_cash" id="go-buy">提交订单</div>
                 <div class="foot_tol"><span>合计(不含运费):</span><span  class="foot_pices susumOne">0.00</span><span class='foot_des'>元</span></div>
                 <div class="foot_selected">
