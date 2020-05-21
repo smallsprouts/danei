@@ -107,9 +107,16 @@ function adddel(){
 			var num=$(this).prev().val();
 			$.ajax({
 				type: "GET",
-				url: "user!changeItemNum.htm",
-				data: {itemId:id,num:num},
+				url: getRootPath()+"cartUpdata",
+				data: {method:"add_count",itemId:id,num:num},
 				success: function(data){
+					if(data=="yes"){
+						//修改成功,更新,seesion中的购物车信息,在服务层解决
+					}else{
+						aler("服务器忙...")
+						//修改失败,就刷新页面
+						window.location.reload();
+					}
 				}
 			});
 		})
@@ -124,17 +131,18 @@ function adddel(){
 				vall1 = 1;
 			}
 			$(this).next().val(vall1);
+			amountadd();
+			$(this).next().val(vall1);
+			$multi1 = parseInt(vall1) * parseInt($(this).parent().prev().children().eq(1).children().eq(1).text());
+			$(this).parent().next().children().eq(1).text(Math.round($multi1).toFixed(2));
 			var id=$(this).parent().siblings('.pudc').children('.pudc_information').attr('id');
 			var num=vall1;
 			$.ajax({
 				type: "GET",
-				url: "user!changeItemNum.htm",
-				data: {itemId:id,num:num},
+				url: getRootPath()+"cartUpdata",
+				data: {method:"reduc_count",itemId:id,num:num},
 				success: function(data){
-					amountadd();
-					$(this).next().val(vall1);
-					$multi1 = parseInt(vall1) * parseInt($(this).parent().prev().children().eq(1).children().eq(1).text());
-					$(this).parent().next().children().eq(1).text(Math.round($multi1).toFixed(2));
+					
 				}
 			});
 		})
@@ -160,3 +168,10 @@ $('.foot_cash').click(function(){
 		 window.location.href = url;
 	}
 })
+
+function getRootPath() {  
+    var pathName = window.location.pathname.substring(1);  
+    var webName = pathName == '' ? '' : pathName.substring(0, pathName.indexOf('/'));  
+    return window.location.protocol + '//' + window.location.host + '/' + webName + '/';  
+
+}

@@ -59,4 +59,14 @@
     <servlet-name>userRegister</servlet-name>
     <url-pattern>/userRegister.action</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>cartUpdata</display-name>
+    <servlet-name>cartUpdata</servlet-name>
+    <servlet-class>cn.zzl.servlet.cartUpdata</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cartUpdata</servlet-name>
+    <url-pattern>/cartUpdata</url-pattern>
+  </servlet-mapping>
 </web-app>
