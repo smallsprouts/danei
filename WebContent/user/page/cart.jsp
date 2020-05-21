@@ -87,6 +87,7 @@
                     <div class="del_top">操作</div>
                 </div>
 <!-- 每页显示五条记录 -->
+<% %>
 <%out.print(session.getAttribute("cart")); %>
                 <!-- <div class="imfor">
                     <div class="check">

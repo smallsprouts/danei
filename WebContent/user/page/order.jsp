@@ -68,6 +68,8 @@
                 </tr>
             </table>
             <!-- 订单列表项 -->
+            <% out.print(session.getAttribute("dindan")); %>
+            
             <div id="orderItem">
               <p class="orderItem_title">
                  <span id="order_id">
