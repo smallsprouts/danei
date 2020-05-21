@@ -51,8 +51,14 @@ public class UserLogin extends HttpServlet {
 					//获取用户所有相关的信息
 					//获取收藏列表
 					session.setAttribute("collect_list",new cn.zzl.service.collect().user_collect(uname));
-					//获取订单列表
+					//获取购物车列表
 					session.setAttribute("cart_list", new cn.zzl.service.cart_item().getCartItem(uname));
+					//获取订单列表
+					session.setAttribute("oder_list", new cn.zzl.service.oder().getOderItems(uname));
+					//获取首页商品列表
+					session.setAttribute("book_list", new cn.zzl.service.book().getBooks());
+					
+					
 				}
 				else
 					response.getWriter().append("no");

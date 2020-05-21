@@ -39,4 +39,27 @@ public class book {
 		return null;
 	}
 
+	public ArrayList<cn.zzl.javabean.book> getAllbook() throws SQLException {
+		QueryRunner qr=new QueryRunner(JDBCUtils.getDataSource());
+		ArrayList<cn.zzl.javabean.book> books = new ArrayList<cn.zzl.javabean.book>();
+		List<java.util.Map<String,Object>> query=qr.query("select * from tb_book", new MapListHandler());
+		for (Iterator iterator = query.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+				//如果是本人的收藏信息,那么就封装到一个javabean中
+				books.add(new cn.zzl.javabean.book(map.get("isbn").toString(),
+						map.get("title").toString(),
+						map.get("author").toString(),
+						map.get("price").toString(),
+						map.get("press").toString(),
+						map.get("edition").toString(),
+						map.get("published").toString(),
+						map.get("pages").toString(),
+						map.get("words").toString(),
+						map.get("packaging").toString(),
+						map.get("format").toString() ,
+						map.get("form").toString()));
+		}
+		return books;
+	}
+
 }
