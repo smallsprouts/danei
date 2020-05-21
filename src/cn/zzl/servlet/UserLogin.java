@@ -50,7 +50,6 @@ public class UserLogin extends HttpServlet {
 					session.setAttribute("uname", uname);
 					//获取用户所有相关的信息
 					//1,用户的收藏
-					//阿萨的差距啊
 					//2,将收藏信息存到session中去
 					session.setAttribute("collect_list",new cn.zzl.service.collect().user_collect(uname));
 				}
