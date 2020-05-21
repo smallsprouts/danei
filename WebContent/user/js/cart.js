@@ -99,17 +99,23 @@ function adddel(){
 			var $multi = 0;
 			var vall = $(this).prev().val();
 			vall++;
+			
+			amountadd();
 			$(this).prev().val(vall);
 			$multi = (parseInt(vall).toFixed(2) * parseInt($(this).parent().prev().children().eq(1).children().eq(1).text()));
 			$(this).parent().next().children().eq(1).text(Math.round($multi).toFixed(2));
-			amountadd();
+			
 			var id=$(this).parent().siblings('.pudc').children('.pudc_information').attr('id');
-			var num=$(this).prev().val();
+			var num=vall;
 			$.ajax({
 				type: "GET",
-				url: "user!changeItemNum.htm",
+				url: getRootPath()+'/userchangeItemNum',
 				data: {itemId:id,num:num},
 				success: function(data){
+					if(data=="yes"){}else{
+						alert("服务器忙...")
+						window.location.reload();
+					}
 				}
 			});
 		})
@@ -126,15 +132,20 @@ function adddel(){
 			$(this).next().val(vall1);
 			var id=$(this).parent().siblings('.pudc').children('.pudc_information').attr('id');
 			var num=vall1;
+			
+				amountadd();
+				$(this).next().val(vall1);
+				$multi1 = parseInt(vall1) * parseInt($(this).parent().prev().children().eq(1).children().eq(1).text());
+				$(this).parent().next().children().eq(1).text(Math.round($multi1).toFixed(2));
 			$.ajax({
 				type: "GET",
-				url: "user!changeItemNum.htm",
+				url: getRootPath()+'/userchangeItemNum',
 				data: {itemId:id,num:num},
 				success: function(data){
-					amountadd();
-					$(this).next().val(vall1);
-					$multi1 = parseInt(vall1) * parseInt($(this).parent().prev().children().eq(1).children().eq(1).text());
-					$(this).parent().next().children().eq(1).text(Math.round($multi1).toFixed(2));
+					if(data=="yes"){}else{
+						alert("服务器忙...")
+						window.location.reload();
+					}
 				}
 			});
 		})
@@ -160,3 +171,9 @@ $('.foot_cash').click(function(){
 		 window.location.href = url;
 	}
 })
+
+function getRootPath() {  
+    var pathName = window.location.pathname.substring(1);  
+    var webName = pathName == '' ? '' : pathName.substring(0, pathName.indexOf('/'));  
+    return window.location.protocol + '//' + window.location.host + '/' + webName + '/';  
+}
