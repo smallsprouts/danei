@@ -59,24 +59,4 @@
     <servlet-name>userRegister</servlet-name>
     <url-pattern>/userRegister.action</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>UserChangeItemNum</display-name>
-    <servlet-name>UserChangeItemNum</servlet-name>
-    <servlet-class>cn.zzl.servlet.UserChangeItemNum</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>UserChangeItemNum</servlet-name>
-    <url-pattern>/userchangeItemNum</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>CartUpdate</display-name>
-    <servlet-name>CartUpdate</servlet-name>
-    <servlet-class>cn.zzl.servlet.CartUpdate</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CartUpdate</servlet-name>
-    <url-pattern>/CartUpdate</url-pattern>
-  </servlet-mapping>
 </web-app>
