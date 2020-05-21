@@ -44,12 +44,20 @@ public class cart_item {
 		if(row>0)return true;
 		return false;
 	}
+	/**
+	 * 写错了,这个是用来存到收藏的
+	 * @param user_id
+	 * @param product
+	 * @return
+	 * @throws SQLException
+	 */
 	public boolean addCart(String user_id, String product) throws SQLException {
-		System.out.println("dao succes");
+//		System.out.println("dao succes");
 		QueryRunner qr=new QueryRunner(JDBCUtils.getDataSource());
-		String sql="INSERT INTO `danei`.`tb_cart_item`(`user_id`, `product`) VALUES (?, ?)";
+		String sql="INSERT INTO `danei`.`tb_collect`(`user_id`, `product`) VALUES (?, ?)";
 		Object[] params= {user_id,product};
 		int row=qr.update(sql, params);
+//		System.out.println(row);
 		if(row>0)return true;
 		return false;
 	}
