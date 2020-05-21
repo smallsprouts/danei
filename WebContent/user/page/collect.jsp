@@ -94,14 +94,14 @@
                     
                     <!-- <div class="lf" id="d1">
                         <div class="img">
-                            <a href="detail.jsp">
+                            <a href="detail.html">
                             	<img src="../img/goods/9787115435101/collect.jpg" alt=""/>
                             </a>
                         </div>
                         <div class="describe">
                             <p>Python数据科学指南</p>
                             <span class="price"><b>￥</b><span class="priceContent">66.2</span></span>
-                            <span class="addCart"><a href="detail.jsp">查看</a></span>
+                            <span class="addCart"><a href="detail.html">查看</a></span>
                             <span class="succee" style="display: none">
                                  <img src="../img/myCollect/product_true.png" alt=""/>
                                  <span>已移入购物车</span>
@@ -341,7 +341,6 @@
     },function(){
         $(this).attr('src',"../img/header/shop_car.png");
     });
-    
 </script>
 </body>
 </html>
