@@ -90,7 +90,7 @@
             <div id="box" >
 
 		        <div id="content_box" >
-<% out.print(session.getAttribute("collect_list"));%>
+<%out.print(session.getAttribute("collect_list"));%>
                     
                     <!-- <div class="lf" id="d1">
                         <div class="img">
