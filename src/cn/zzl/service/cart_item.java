@@ -62,4 +62,22 @@ public class cart_item {
 		return false;
 	}
 
+	public boolean addCart(String uname, String product) throws SQLException {
+		//通过用户名获取用户的手机号(编号)
+		String user_id=new cn.zzl.dao.user().getPhone(uname);
+		//查询一下是否存在这本书
+		//向collect数据表中添加信息
+		if(new cn.zzl.dao.collect().ifExists(user_id,product))return new cn.zzl.dao.cart_item().addCart(user_id,product);
+		return false;
+	}
+
+	public boolean addToCart(String uname, String product, String count) throws SQLException {
+		//通过用户名获取用户的手机号(编号)
+		String user_id=new cn.zzl.dao.user().getPhone(uname);
+		//查询一下是否存在这本书
+		//向cart数据表中添加信息
+		if(new cn.zzl.dao.cart_item().ifExists(user_id,product))return new cn.zzl.dao.cart_item().addCart(user_id,product,count);
+		return false;
+	}
+
 }

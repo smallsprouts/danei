@@ -76,6 +76,20 @@
         热搜排行
     </div>
 
+<!-- <div>
+            <a href="detail.jsp"><img src="../img/goods/9787111545682/index.jpg" alt=""/></a>
+            <p class="one">Linux运维最佳实践</p>
+            <p class="two">
+                <span>
+                    价格：<span>￥56.5</span>
+                </span>
+            </p>
+            <p class="three">
+                <span>
+                出版社：<span>机械工业出版社</span>
+                </span>
+            </p>
+        </div> -->
 
 		    <% out.print(session.getAttribute("book_list")); %>
 
@@ -147,7 +161,7 @@
             <img src="../img/footer/erweima.png">
         </div>
     </div>
-    <%out.print(session.getAttribute("uname")) ; %>
+    <%out.print("欢迎您:"+session.getAttribute("uname")) ; %>
 </div>
 <script src="../js/jquery-3.1.1.min.js"></script>
 <script src="../js/index.js"></script>

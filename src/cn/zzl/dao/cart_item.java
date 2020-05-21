@@ -35,4 +35,35 @@ public class cart_item {
 		return false;
 	}
 
+	public boolean addCart(String user_id, String product,String count) throws SQLException {
+//		System.out.println("dao succes");
+		QueryRunner qr=new QueryRunner(JDBCUtils.getDataSource());
+		String sql="INSERT INTO `danei`.`tb_cart_item`(`user_id`, `product`,`count`) VALUES (?, ?,?)";
+		Object[] params= {user_id,product,count};
+		int row=qr.update(sql, params);
+		if(row>0)return true;
+		return false;
+	}
+	public boolean addCart(String user_id, String product) throws SQLException {
+		System.out.println("dao succes");
+		QueryRunner qr=new QueryRunner(JDBCUtils.getDataSource());
+		String sql="INSERT INTO `danei`.`tb_cart_item`(`user_id`, `product`) VALUES (?, ?)";
+		Object[] params= {user_id,product};
+		int row=qr.update(sql, params);
+		if(row>0)return true;
+		return false;
+	}
+
+	public boolean ifExists(String user_id, String product) throws SQLException {
+		QueryRunner qr=new QueryRunner(JDBCUtils.getDataSource());
+		List<java.util.Map<String,Object>> query=qr.query("select * from tb_cart_item", new MapListHandler());
+		for (Iterator iterator = query.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			if(map.get("product").toString().equals(product)&&map.get("user_id").toString().equals(user_id)) {
+				return false;
+			};
+		}
+		return true;
+	}
+
 }

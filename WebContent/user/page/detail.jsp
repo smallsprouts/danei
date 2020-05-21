@@ -1,35 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>达内商城学子详情页</title>
-    <link href="../css/header.css" rel="stylesheet" />
-    <link href="../css/pro.details.css" rel="stylesheet" />
-    <link href="../css/animate.css" rel="stylesheet" />
-    <link href="../css/footer.css" rel="stylesheet" />
+    <link href="/danei/user/css/header.css" rel="stylesheet" />
+    <link href="/danei/user/css/pro.details.css" rel="stylesheet" />
+    <link href="/danei/user/css/animate.css" rel="stylesheet" />
+    <link href="/danei/user/css/footer.css" rel="stylesheet" />
 </head>
 <body>
 <!-- 页面顶部-->
 <header id="top">
     <div id="logo" class="lf">
-        <img class="animated jello" src="../img/header/logo.png" alt="logo"/>
+        <img class="animated jello" src="/danei/user/img/header/logo.png" alt="logo"/>
     </div>
     <div id="top_input" class="lf">
         <input id="input" type="text" placeholder="请输入您要搜索的内容"/>
 
-        <a href="" class="rt"><img id="search" src="../img/header/search.png" alt="搜索"/></a>
+        <a href="" class="rt"><img id="search" src="/danei/user/img/header/search.png" alt="搜索"/></a>
     </div>
     <div class="rt">
         <ul class="lf">
-            <li><a href="index.html" >首页</a><b>|</b></li>
-            <li><a href="collect.html" >收藏</a><b>|</b></li>
-            <li><a href="order.html" >订单</a><b>|</b></li>
-            <li><a href="cart.html" >购物车</a><b>|</b></li>
-            <li><a href="password-change.html">设置</a><b>|</b></li>
-            <li><a href="login.html">退出</a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a></li>
+            <li><a href="/danei/user/page/index.jsp" >首页</a><b>|</b></li>
+            <li><a href="/danei/user/page/collect.jsp" >收藏</a><b>|</b></li>
+            <li><a href="/danei/user/page/order.jsp" >订单</a><b>|</b></li>
+            <li><a href="/danei/user/page/cart.jsp" >购物车</a><b>|</b></li>
+            <li><a href="/danei/user/page/password-change.jsp">设置</a><b>|</b></li>
+            <li><a href="/danei/user/page/login.jsp">退出</a><b>|</b></li>
+            <li><a href="/danei/user/page/lookforward.jsp">帮助</a></li>
         </ul>
     </div>
 </header>
@@ -45,27 +46,27 @@
     <!-- 左侧-->
     <div id="preview" class="lf">
         <div id="mediumDiv">
-            <img id="mImg" src="../img/goods/9787115435101/detail1big.jpg"/>
+            <img id="mImg" src="/danei/user/img/goods/${requestScope.book.getIsbn()}/detail1big.jpg"/>
         </div>
         <div id="icon_all">
             <ul id="icon_list">
-                <li class="i1"><img src="../img/goods/9787115435101/detail1.jpg" /></li>
-                <li class="i1"><img src="../img/goods/9787115435101/detail2.jpg" onerror="this.style.display='none'" /></li>
-                <li class="i1"><img src="../img/goods/9787115435101/detail3.jpg" onerror="this.style.display='none'" /></li>
-                <li class="i1"><img src="../img/goods/9787115435101/detail4.jpg" onerror="this.style.display='none'" /></li>
-                <li class="li"><img src="../img/goods/9787115435101/detail5.jpg" onerror="this.style.display='none'" /></li>
+                <li class="i1"><img src="/danei/img/goods/9787115435101/detail1.jpg" /></li>
+                <li class="i1"><img src="/danei/user/img/goods/9787115435101/detail2.jpg" onerror="this.style.display='none'" /></li>
+                <li class="i1"><img src="/danei/user/img/goods/9787115435101/detail3.jpg" onerror="this.style.display='none'" /></li>
+                <li class="i1"><img src="/danei/user/img/goods/9787115435101/detail4.jpg" onerror="this.style.display='none'" /></li>
+                <li class="li"><img src="/danei/user/img/goods/9787115435101/detail5.jpg" onerror="this.style.display='none'" /></li>
             </ul>
         </div>
     </div>
     <!-- 右侧-->
     <div class="right_detail lf">
         <!-- 图书名称-->
-        <h1>Python数据科学指南</h1>
+        <h1> ${requestScope.book.getTitle()}</h1>
         <!-- 图书作者 -->
-        <h3>(印度，Gopi，Subramanian，萨伯拉曼尼安 著；方延风，刘丹 译)</h3>
+        <h3>(${requestScope.book.getAuthor()})</h3>
         <!-- 价格部分-->
         <div class="price">
-            <div id="pro_price"><b>价格：</b><span>￥66.20</span></div>
+            <div id="pro_price"><b>价格：</b><span>￥${requestScope.book.getPrice()}</span></div>
             <div class="promise">
                 <b>服务承诺：</b>
                 <span>*退货补运费</span>
@@ -77,17 +78,17 @@
         <!-- 参数部分 客服-->
         <p class="parameter">
             <b>客服：</b>
-            <span class="connect">联系客服</span><img class="gif" src="../img/product_detail/kefuf.gif">
+            <span class="connect">联系客服</span><img class="gif" src="/danei/user/img/product_detail/kefuf.gif">
         </p>
         <!-- 出版社 -->
         <p class="style" id="choose_color">
             <s class="color">出版社：</s>
-            <span>人民邮电出版社</span>
+            <span>${requestScope.book.getPress()}</span>
         </p>
         <!-- 出版日期 -->
         <p>
             <s>出版日期：</s>
-            <span>2016-11-01</span>
+            <span>${requestScope.book.getPublished()}</span>
         </p>
         <!-- 未选择规格，颜色时状态-->
         <div class="message"></div>
@@ -101,8 +102,8 @@
         <!-- 购买部分-->
         <div class="shops">
             <a href="#" class="buy lf" id="buy_now">立即购买</a>
-            <a href="#" class="shop lf" id="add_cart"><img src="../img/product_detail/product_detail_img7.png" alt=""/>加入购物车</a>
-            <a href="#" class="collection lf" id="collect"><span>收藏</span></a><b><img src='../img/product_detail/product_detail_img62.png' alt=""/></b>
+            <a href="#" class="shop lf" id="add_cart"><img src="/danei/user/img/product_detail/product_detail_img7.png" alt=""/>加入购物车</a>
+            <a href="#" class="collection lf" id="collect"><span>收藏</span></a><b><img src='/danei/user/img/product_detail/product_detail_img62.png' alt=""/></b>
         </div>
     </div>
 </div>
@@ -114,25 +115,25 @@
             <div id="demo1" style="float:left"><!-- 第一个宽度显示 -->
                  <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <a href="detail.html?isbn=9787302435167"><img src="../img/recommend/recommend_img1.jpg" border="0"></a>
+                        <a href="detail.jsp?isbn=9787302435167"><img src="/danei/user/img/recommend/recommend_img1.jpg" border="0"></a>
                     </div>
                     <p>大数据架构师指南</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <a href="detail.html?isbn=9787115335500"><img src="../img/recommend/recommend_img2.jpg" border="0"></a>
+                        <a href="detail.jsp?isbn=9787115335500"><img src="/danei/user/img/recommend/recommend_img2.jpg" border="0"></a>
                     </div>
                     <p>深入浅出Node.js</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <a href="detail.html?isbn=9787111213826"><img src="../img/recommend/recommend_img3.jpg" border="0"></a>
+                        <a href="detail.jsp?isbn=9787111213826"><img src="/danei/user/img/recommend/recommend_img3.jpg" border="0"></a>
                     </div>
                     <p>Java编程思想</p>
                 </div>
                 <div class="detail_1 lf">
                     <div class="detail_img1">
-                        <a href="detail.html?isbn=9787111545682"><img src="../img/recommend/recommend_img4.jpg" border="0"></a>
+                        <a href="detail.jsp?isbn=9787111545682"><img src="/danei/user/img/recommend/recommend_img4.jpg" border="0"></a>
                     </div>
                     <p>Linux运维最佳实践</p>
                 </div>
@@ -151,11 +152,11 @@
         <div class="tab lf">
             <div class="cat">
                 <span class="active"><a href="">商品详情</a></span>
-                <span><a href="lookforward.html">商品评价</a></span>
+                <span><a href="lookforward.jsp">商品评价</a></span>
             </div>
         </div>
         <div class="cart rt">
-            <img src="../img/product_detail/product_detail_img9.png" alt=""/>
+            <img src="/danei/user/img/product_detail/product_detail_img9.png" alt=""/>
         </div>
     </div>
     <div class="left lf">
@@ -165,7 +166,7 @@
                 <div id="specification_parameter">
                     <p>
                         规格参数
-                        <img src="../img/product_detail/product_detail_icon_1.png" alt="" class="ys5"/>
+                        <img src="/danei/user/img/product_detail/product_detail_icon_1.png" alt="" class="ys5"/>
                     </p>
                     <!--<img src="img_x/canshu.png" alt="" class="ys5"/>-->
                 </div>
@@ -185,7 +186,7 @@
                     	<a href="#">作者：
 
 
-					            	印度，Gopi，Subramania...
+					            	印度，Gopi，Subramania/danei/user.
 
 
 
@@ -209,19 +210,19 @@
             <div id="product_introduction">
                 <p>
                     商品介绍
-                    <img src="../img/product_detail/product_detail_icon_4.png" alt="" class="ys5"/>
+                    <img src="/danei/user/img/product_detail/product_detail_icon_4.png" alt="" class="ys5"/>
                 </p>
-                <img src="../img/goods/9787115435101/intro.jpg" alt=""/>
+                <img src="/danei/user/img/goods/9787115435101/intro.jpg" alt=""/>
             </div>
             <div id="sale_protection">
                 <p>
                     售后保障
-                    <img src="../img/product_detail/product_detail_icon_3.png" alt="" class="ys5"/>
+                    <img src="/danei/user/img/product_detail/product_detail_icon_3.png" alt="" class="ys5"/>
                 </p>
 
                 <div class="sale_content">
                     <p class="paper" id="sale_protect">
-                        <img src="../img/product_detail/product_detail_img16.png" alt=""/>
+                        <img src="/danei/user/img/product_detail/product_detail_img16.png" alt=""/>
                         正品保障
                     </p>
 
@@ -230,7 +231,7 @@
                     </p>
 
                     <p class="paper">
-                        <img src="../img/product_detail/product_detail_img16.png" alt=""/>
+                        <img src="/danei/user/img/product_detail/product_detail_img16.png" alt=""/>
                         全国联保
                     </p>
 
@@ -244,32 +245,32 @@
     </div>
     <div class="right rt">
         <div class="aside_nav">
-            <p><i><img src="../img/product_detail/product_detail_icon_g_1.png" alt=""/></i><a href="#specification_parameter">规格参数</a></p>
-            <p><i><img src="../img/product_detail/product_detail_icon_t_1.png" alt=""/></i><a href="#product_introduction">商品介绍</a></p>
-            <p><i><img src="../img/product_detail/product_detail_icon_d_1.png" alt=""/></i><a href="#sale_protection">售后保障</a></p>
-            <p><i><img src="../img/product_detail/product_detail_icon_up_1.png" alt=""/></i><a href="#">回到顶部</a></p>
+            <p><i><img src="/danei/user/img/product_detail/product_detail_icon_g_1.png" alt=""/></i><a href="#specification_parameter">规格参数</a></p>
+            <p><i><img src="/danei/user/img/product_detail/product_detail_icon_t_1.png" alt=""/></i><a href="#product_introduction">商品介绍</a></p>
+            <p><i><img src="/danei/user/img/product_detail/product_detail_icon_d_1.png" alt=""/></i><a href="#sale_protection">售后保障</a></p>
+            <p><i><img src="/danei/user/img/product_detail/product_detail_icon_up_1.png" alt=""/></i><a href="#">回到顶部</a></p>
         </div>
     </div>
 </div>
 <!-- 品质保障，私人定制等-->
 <div id="foot_box">
     <div class="icon1 lf">
-        <img src="../img/footer/icon1.png" alt=""/>
+        <img src="/danei/user/img/footer/icon1.png" alt=""/>
 
         <h3>品质保障</h3>
     </div>
     <div class="icon2 lf">
-        <img src="../img/footer/icon2.png" alt=""/>
+        <img src="/danei/user/img/footer/icon2.png" alt=""/>
 
         <h3>私人定制</h3>
     </div>
     <div class="icon3 lf">
-        <img src="../img/footer/icon3.png" alt=""/>
+        <img src="/danei/user/img/footer/icon3.png" alt=""/>
 
         <h3>学员特供</h3>
     </div>
     <div class="icon4 lf">
-        <img src="../img/footer/icon4.png" alt=""/>
+        <img src="/danei/user/img/footer/icon4.png" alt=""/>
 
         <h3>专属特权</h3>
     </div>
@@ -278,8 +279,8 @@
 <div class="foot_bj">
     <div id="foot">
         <div class="lf">
-            <p class="footer1"><img src="../img/footer/tedu.png" alt="" class=" footLogo"/></p>
-            <p class="footer2"><img src="../img/footer/footerFont.png"alt=""/></p>
+            <p class="footer1"><img src="/danei/user/img/footer/tedu.png" alt="" class=" footLogo"/></p>
+            <p class="footer2"><img src="/danei/user/img/footer/footerFont.png"alt=""/></p>
             <!-- 页面底部-备案号 #footer -->
             <div class="record">
                 2001-2016 版权所有 京ICP证8000853号-56
@@ -302,23 +303,23 @@
                 <li><a href="#">关于达内</a></li>
                 <li><a href="#">联系我们</a></li>
                 <li>
-                    <img src="../img/footer/wechat.png" alt=""/>
-                    <img src="../img/footer/sinablog.png" alt=""/>
+                    <img src="/danei/user/img/footer/wechat.png" alt=""/>
+                    <img src="/danei/user/img/footer/sinablog.png" alt=""/>
                 </li>
             </ul>
         </div>
         <div class="service">
             <p>达内商城客户端</p>
-            <img src="../img/footer/ios.png" class="lf">
-            <img src="../img/footer/android.png" alt="" class="lf"/>
+            <img src="/danei/user/img/footer/ios.png" class="lf">
+            <img src="/danei/user/img/footer/android.png" alt="" class="lf"/>
         </div>
         <div class="download">
-            <img src="../img/footer/erweima.png">
+            <img src="/danei/user/img/footer/erweima.png">
         </div>
     </div>
 </div>
-<script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="/danei/user/js/jquery-3.1.1.min.js"></script>
+<script src="/danei/user/js/index.js"></script>
 <!--图片轮播悬停进入详情页效果-->
 <script>
     var speed = 20;
@@ -385,14 +386,14 @@
            	console.log("collect");
            	$.ajax({
                 type: "post",
-                url: 'cancelCollect.htm',
-                data: "userId=12345678901&product=9787115435101",//params,
-                success: function (data) {
+                url: 'addCollect',
+                data: "product="+${requestScope.book.getIsbn()},//params,
+                success:function (data) {
                     if (data == 'yes') {
                     	alert("操作完成！");
-                    	window.location.href = "detail.html?isbn=9787115435101";
+                    	window.location.href = "/danei/detaile?book_isbn="+${requestScope.book.getIsbn()};
                     } else {
-                        alert("操作失败！");
+                        alert("你已经收藏了该商品");
                     }
                 },
                 error: function (data) {
@@ -422,7 +423,7 @@
         $("#buy_now").click(function (e) {
             var num = $("#buy-num").val();
             // 后台需要的参数
-            var url = "order-confirm.html?product=9787115435101&count="+num;
+            var url = "order-confirm.jsp?product=9787115435101&count="+num;
             window.location.href = url;
         })
     })
@@ -432,31 +433,28 @@
     var buyAccount;
     $("#add_cart").click(function (e) {
         //数量取值
-        /*
+        
         buyAccount = $("#buy-num").val();
         console.log(buyAccount);
         var params = {
         	count: buyAccount,
-        	product: 9787115435101
+        	product: ${requestScope.book.getIsbn()}
         };
         $.ajax({
             type: "post",
-            url: "addToCart.htm",
+            url: "addToCart",
             data: params,
             success: function (data) {
                 if (data == 'yes') {
                     alert("添加购物车成功！");
                 } else {
-                    alert("添加购物车失败！");
+                    alert("你的购物车已经添加!!!");
                 }
             },
             error: function (data) {
                 alert("系统异常！");
             }
-        });
-        */
-        var url = "cart.html";
-        window.location.href = url;
+        });        
     })
 </script>
 <!--图片效果-->

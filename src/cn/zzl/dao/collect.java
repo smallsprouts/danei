@@ -30,4 +30,16 @@ public class collect {
 		return list;
 	}
 
+	public boolean ifExists(String user_id, String product) throws SQLException {
+		QueryRunner qr=new QueryRunner(JDBCUtils.getDataSource());
+		List<java.util.Map<String,Object>> query=qr.query("select * from tb_collect", new MapListHandler());
+		for (Iterator iterator = query.iterator(); iterator.hasNext();) {
+			Map<String, Object> map = (Map<String, Object>) iterator.next();
+			if(map.get("product").toString().equals(product)&&map.get("user_id").toString().equals(user_id)) {
+				return false;
+			};
+		}
+		return true;
+	}
+
 }

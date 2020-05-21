@@ -24,7 +24,7 @@ public class book {
 			
 			str += "";
 			str += "        <div>";
-			str += "            <a href=\"detail.jsp\"><img src=\"../img/goods/"+book.getIsbn()+"/index.jpg\" alt=\"\"/></a>";
+			str += "            <a href=\"/danei/detaile?book_isbn="+book.getIsbn()+"\"><img src=\"../img/goods/"+book.getIsbn()+"/index.jpg\" alt=\"\"/></a>";
 			str += "            <p class=\"one\">"+book.getTitle()+"</p>";
 			str += "            <p class=\"two\">";
 			str += "                <span>";

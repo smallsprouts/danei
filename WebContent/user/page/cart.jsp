@@ -23,13 +23,13 @@
     </div>
     <div class="rt">
         <ul class="lf">
-            <li><a href="index.html" >首页</a><b>|</b></li>
-            <li><a href="collect.html" >收藏</a><b>|</b></li>
-            <li><a href="order.html" >订单</a><b>|</b></li>
-            <li><a href="cart.html" >购物车</a><b>|</b></li>
-            <li><a href="password-change.html">设置</a><b>|</b></li>
-            <li><a href="login.html">退出</a><b>|</b></li>
-            <li><a href="lookforward.html">帮助</a></li>
+            <li><a href="index.jsp" >首页</a><b>|</b></li>
+            <li><a href="collect.jsp" >收藏</a><b>|</b></li>
+            <li><a href="order.jsp" >订单</a><b>|</b></li>
+            <li><a href="cart.jsp" >购物车</a><b>|</b></li>
+            <li><a href="password-change.jsp">设置</a><b>|</b></li>
+            <li><a href="login.jsp">退出</a><b>|</b></li>
+            <li><a href="lookforward.jsp">帮助</a></li>
         </ul>
     </div>
 </header>
